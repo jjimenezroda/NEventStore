@@ -29,7 +29,7 @@ namespace NEventStore.Persistence.AcceptanceTests
 
         private IDbConnection OpenInternal()
         {
-            string connectionString = Environment.GetEnvironmentVariable(_envVarKey, EnvironmentVariableTarget.Process);
+            string connectionString = Environment.GetEnvironmentVariable(_envVarKey, EnvironmentVariableTarget.User);
             if (connectionString == null)
             {
                 string message =

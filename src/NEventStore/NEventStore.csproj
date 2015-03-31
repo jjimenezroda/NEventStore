@@ -164,6 +164,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Persistence\Sql\SqlDialects\DelimitedDbStatement.cs" />
+    <Compile Include="Persistence\Sql\SqlDialects\FirebirdSqlDialect.cs" />
     <Compile Include="Persistence\Sql\SqlDialects\MsSqlDialect.cs" />
     <Compile Include="Persistence\Sql\SqlDialects\MsSqlStatements.Designer.cs">
       <DependentUpon>MsSqlStatements.resx</DependentUpon>
@@ -186,6 +187,11 @@
     </Compile>
     <Compile Include="Persistence\Sql\SqlDialects\PagedEnumerationCollection.cs" />
     <Compile Include="Persistence\Sql\SqlDialects\PostgreSqlDialect.cs" />
+    <Compile Include="Persistence\Sql\SqlDialects\FirebirdSqlStatements.Designer.cs">
+      <DependentUpon>FirebirdSqlStatements.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Persistence\Sql\SqlDialects\PostgreSqlStatements.Designer.cs">
       <DependentUpon>PostgreSqlStatements.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -314,6 +320,11 @@
     <EmbeddedResource Include="Persistence\Sql\SqlDialects\OracleNativeStatements.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OracleNativeStatements.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Sql\SqlDialects\FirebirdSqlStatements.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FirebirdSqlStatements.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Sql\SqlDialects\PostgreSqlStatements.resx">
