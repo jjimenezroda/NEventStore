@@ -15,15 +15,15 @@ namespace NEventStore.Diagnostics
         private const string TotalSnapshotsName = "Total Snapshots";
         private const string SnapshotsRateName = "Snapshots/Sec";
         private const string UndispatchedQueue = "Undispatched Queue Length";
-        private readonly PerformanceCounter _avgCommitDuration;
-        private readonly PerformanceCounter _avgCommitDurationBase;
-        private readonly PerformanceCounter _commitsRate;
-        private readonly PerformanceCounter _eventsRate;
-        private readonly PerformanceCounter _snapshotsRate;
-        private readonly PerformanceCounter _totalCommits;
-        private readonly PerformanceCounter _totalEvents;
-        private readonly PerformanceCounter _totalSnapshots;
-        private readonly PerformanceCounter _undispatchedCommits;
+		//private readonly PerformanceCounter _avgCommitDuration;
+		//private readonly PerformanceCounter _avgCommitDurationBase;
+		//private readonly PerformanceCounter _commitsRate;
+		//private readonly PerformanceCounter _eventsRate;
+		//private readonly PerformanceCounter _snapshotsRate;
+		//private readonly PerformanceCounter _totalCommits;
+		//private readonly PerformanceCounter _totalEvents;
+		//private readonly PerformanceCounter _totalSnapshots;
+		//private readonly PerformanceCounter _undispatchedCommits;
 
         static PerformanceCounters()
         {
@@ -57,20 +57,20 @@ namespace NEventStore.Diagnostics
             //
             // Some of these will involve hooking into other parts of the NEventStore
 
-            PerformanceCounterCategory.Create(CategoryName, "NEventStore Event-Sourcing Persistence", PerformanceCounterCategoryType.MultiInstance, counters);
+           // PerformanceCounterCategory.Create(CategoryName, "NEventStore Event-Sourcing Persistence", PerformanceCounterCategoryType.MultiInstance, counters);
         }
 
         public PerformanceCounters(string instanceName)
         {
-            _totalCommits = new PerformanceCounter(CategoryName, TotalCommitsName, instanceName, false);
-            _commitsRate = new PerformanceCounter(CategoryName, CommitsRateName, instanceName, false);
-            _avgCommitDuration = new PerformanceCounter(CategoryName, AvgCommitDuration, instanceName, false);
-            _avgCommitDurationBase = new PerformanceCounter(CategoryName, AvgCommitDurationBase, instanceName, false);
-            _totalEvents = new PerformanceCounter(CategoryName, TotalEventsName, instanceName, false);
-            _eventsRate = new PerformanceCounter(CategoryName, EventsRateName, instanceName, false);
-            _totalSnapshots = new PerformanceCounter(CategoryName, TotalSnapshotsName, instanceName, false);
-            _snapshotsRate = new PerformanceCounter(CategoryName, SnapshotsRateName, instanceName, false);
-            _undispatchedCommits = new PerformanceCounter(CategoryName, UndispatchedQueue, instanceName, false);
+//            _totalCommits = new PerformanceCounter(CategoryName, TotalCommitsName, instanceName, false);
+			//_commitsRate = new PerformanceCounter(CategoryName, CommitsRateName, instanceName, false);
+			//_avgCommitDuration = new PerformanceCounter(CategoryName, AvgCommitDuration, instanceName, false);
+			//_avgCommitDurationBase = new PerformanceCounter(CategoryName, AvgCommitDurationBase, instanceName, false);
+			//_totalEvents = new PerformanceCounter(CategoryName, TotalEventsName, instanceName, false);
+			//_eventsRate = new PerformanceCounter(CategoryName, EventsRateName, instanceName, false);
+			//_totalSnapshots = new PerformanceCounter(CategoryName, TotalSnapshotsName, instanceName, false);
+			//_snapshotsRate = new PerformanceCounter(CategoryName, SnapshotsRateName, instanceName, false);
+			//_undispatchedCommits = new PerformanceCounter(CategoryName, UndispatchedQueue, instanceName, false);
         }
 
         public void Dispose()
@@ -81,24 +81,24 @@ namespace NEventStore.Diagnostics
 
         public void CountCommit(int eventsCount, long elapsedMilliseconds)
         {
-            _totalCommits.Increment();
-            _commitsRate.Increment();
-            _avgCommitDuration.IncrementBy(elapsedMilliseconds);
-            _avgCommitDurationBase.Increment();
-            _totalEvents.IncrementBy(eventsCount);
-            _eventsRate.IncrementBy(eventsCount);
-            _undispatchedCommits.Increment();
+            //_totalCommits.Increment();
+			//_commitsRate.Increment();
+			//_avgCommitDuration.IncrementBy(elapsedMilliseconds);
+			//_avgCommitDurationBase.Increment();
+			//_totalEvents.IncrementBy(eventsCount);
+			//_eventsRate.IncrementBy(eventsCount);
+			//_undispatchedCommits.Increment();
         }
 
         public void CountSnapshot()
         {
-            _totalSnapshots.Increment();
-            _snapshotsRate.Increment();
+			//_totalSnapshots.Increment();
+			//_snapshotsRate.Increment();
         }
 
         public void CountCommitDispatched()
         {
-            _undispatchedCommits.Decrement();
+           // _undispatchedCommits.Decrement();
         }
 
         ~PerformanceCounters()
@@ -108,15 +108,15 @@ namespace NEventStore.Diagnostics
 
         protected virtual void Dispose(bool disposing)
         {
-            _totalCommits.Dispose();
-            _commitsRate.Dispose();
-            _avgCommitDuration.Dispose();
-            _avgCommitDurationBase.Dispose();
-            _totalEvents.Dispose();
-            _eventsRate.Dispose();
-            _totalSnapshots.Dispose();
-            _snapshotsRate.Dispose();
-            _undispatchedCommits.Dispose();
+			//_totalCommits.Dispose();
+			//_commitsRate.Dispose();
+			//_avgCommitDuration.Dispose();
+			//_avgCommitDurationBase.Dispose();
+			//_totalEvents.Dispose();
+			//_eventsRate.Dispose();
+			//_totalSnapshots.Dispose();
+			//_snapshotsRate.Dispose();
+			//_undispatchedCommits.Dispose();
         }
     }
 }
