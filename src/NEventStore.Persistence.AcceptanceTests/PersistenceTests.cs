@@ -1144,7 +1144,7 @@ namespace NEventStore.Persistence.AcceptanceTests
 				_persistence.Drop();
 				_persistence.Dispose();
 			}
-			
+
 			SetEnvironmentVariable();
 			_persistence = new PerformanceCounterPersistenceEngine(_createPersistence(pageSize), "tests");
 			_persistence.Initialize();
@@ -1162,7 +1162,7 @@ namespace NEventStore.Persistence.AcceptanceTests
 				_persistence.Drop();
 				_persistence.Dispose();
 			}
-			
+
 			ClearEnvironmentVariable();
 		}
 
