@@ -108,6 +108,8 @@
     <Compile Include="EventUpconverterWireupExtensions.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Conversion\IUpconvertEvents.cs" />
+    <Compile Include="FirebirdSqlPersistenceWireup.cs" />
+    <Compile Include="FirebirdWireupExtension.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="ICheckpoint.cs" />
     <Compile Include="ICommit.cs" />
